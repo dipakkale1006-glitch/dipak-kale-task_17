@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division Using Promises - JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1><span>Task 17:</span> JavaScript - Division Using Promises</h1>
+            <p class="subtitle">Asynchronous division with error handling (division by zero) using Arrow Functions & Promises</p>
+        </header>
+
+        <!-- Interactive Calculator Card -->
+        <div class="card calc-card">
+            <div class="screen" id="screenDisplay">
+                <p class="screen-label">Promise State: <span id="promiseState" class="badge-pending">Ready</span></p>
+                <h2 id="resultText">Enter Numbers to Divide</h2>
+            </div>
+
+            <form id="divideForm">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="num1">Numerator (First Number):</label>
+                        <input type="number" id="num1" value="10" placeholder="e.g. 10" step="any" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="num2">Denominator (Second Number):</label>
+                        <input type="number" id="num2" value="2" placeholder="e.g. 2 or 0" step="any" required>
+                    </div>
+                </div>
+
+                <!-- Quick Presets -->
+                <div class="presets-wrap">
+                    <span class="preset-label">Quick Test Cases:</span>
+                    <button type="button" class="btn-preset" data-n1="10" data-n2="2">Case 1: 10 ÷ 2</button>
+                    <button type="button" class="btn-preset" data-n1="10" data-n2="0">Case 2: 10 ÷ 0 (Error)</button>
+                    <button type="button" class="btn-preset" data-n1="45" data-n2="5">Case 3: 45 ÷ 5</button>
+                    <button type="button" class="btn-preset" data-n1="-20" data-n2="4">Case 4: -20 ÷ 4</button>
+                    <button type="button" class="btn-preset" data-n1="0" data-n2="7">Case 5: 0 ÷ 7</button>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" id="divideBtn">Perform Division (Promise)</button>
+                    <button type="reset" class="reset" id="resetBtn">Reset</button>
+                </div>
+            </form>
+
+            <!-- Results Detail Box -->
+            <div class="output-box" id="outputBox">
+                <div class="output-row">
+                    <span>Operation:</span>
+                    <strong id="outOperation">10 ÷ 2</strong>
+                </div>
+                <div class="output-row">
+                    <span>Status:</span>
+                    <strong id="outStatus" class="text-green">Promise Resolved</strong>
+                </div>
+                <div class="output-row">
+                    <span>Output Message:</span>
+                    <strong id="outMessage">Result: 5</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Predefined 5 Cases Reference Card -->
+        <div class="card cases-card">
+            <h3>Predefined Test Cases (5 Cases Executed on Load)</h3>
+            <p class="desc">As per assignment requirements, the arrow function <code>divideNumbers(num1, num2)</code> is called for at least 5 different cases. Handled via <code>.then()</code> for resolved values and <code>.catch()</code> for errors.</p>
+
+            <div class="cases-grid">
+                <div class="case-box success">
+                    <span class="case-badge">Case 1</span>
+                    <h4>10 ÷ 2</h4>
+                    <span class="state-tag resolved">Resolved</span>
+                    <p class="case-result">Result: 5</p>
+                </div>
+
+                <div class="case-box error">
+                    <span class="case-badge">Case 2</span>
+                    <h4>10 ÷ 0</h4>
+                    <span class="state-tag rejected">Rejected</span>
+                    <p class="case-error">Error: Division by zero is not allowed.</p>
+                </div>
+
+                <div class="case-box success">
+                    <span class="case-badge">Case 3</span>
+                    <h4>45 ÷ 5</h4>
+                    <span class="state-tag resolved">Resolved</span>
+                    <p class="case-result">Result: 9</p>
+                </div>
+
+                <div class="case-box success">
+                    <span class="case-badge">Case 4</span>
+                    <h4>-20 ÷ 4</h4>
+                    <span class="state-tag resolved">Resolved</span>
+                    <p class="case-result">Result: -5</p>
+                </div>
+
+                <div class="case-box success">
+                    <span class="case-badge">Case 5</span>
+                    <h4>0 ÷ 7</h4>
+                    <span class="state-tag resolved">Resolved</span>
+                    <p class="case-result">Result: 0</p>
+                </div>
+            </div>
+
+            <!-- Console Log Preview Box -->
+            <div class="console-box">
+                <div class="console-header">
+                    <span>Browser Console Output Preview (Press F12)</span>
+                </div>
+                <pre class="console-code">Example 1
+Dividing 10 by 2
+Result: 5
+
+Example 2
+Dividing 10 by 0...
+Error: Division by zero is not allowed.
+
+Example 3
+Dividing 45 by 5
+Result: 9
+
+Example 4
+Dividing -20 by 4
+Result: -5
+
+Example 5
+Dividing 0 by 7
+Result: 0</pre>
+            </div>
+        </div>
+
+        <footer>Made with HTML, CSS & JavaScript | Dipak Kale</footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
